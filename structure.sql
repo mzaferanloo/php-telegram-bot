@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `inline_query` (
   `id` bigint UNSIGNED COMMENT 'Unique identifier for this query',
   `user_id` bigint NULL COMMENT 'Unique user identifier',
   `location` CHAR(255) NULL DEFAULT NULL COMMENT 'Location of the user',
-  `query` TEXT NOT NULL DEFAULT '' COMMENT 'Text of the query',
+  `query` TEXT NOT NULL COMMENT 'Text of the query',
   `offset` CHAR(255) NULL DEFAULT NULL COMMENT 'Offset of the result',
   `created_at` timestamp NULL DEFAULT NULL COMMENT 'Entry date creation',
 
@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `chosen_inline_result` (
   `user_id` bigint NULL COMMENT 'Unique user identifier',
   `location` CHAR(255) NULL DEFAULT NULL COMMENT 'Location object, user\'s location',
   `inline_message_id` CHAR(255) NULL DEFAULT NULL COMMENT 'Identifier of the sent inline message',
-  `query` TEXT NOT NULL DEFAULT '' COMMENT 'The query that was used to obtain the result',
+  `query` TEXT NOT NULL  COMMENT 'The query that was used to obtain the result',
   `created_at` timestamp NULL DEFAULT NULL COMMENT 'Entry date creation',
 
   PRIMARY KEY (`id`),
@@ -217,7 +217,7 @@ CREATE TABLE IF NOT EXISTS `conversation` (
 CREATE TABLE IF NOT EXISTS `botan_shortener` (
   `id` bigint UNSIGNED AUTO_INCREMENT COMMENT 'Unique identifier for this entry',
   `user_id` bigint NULL DEFAULT NULL COMMENT 'Unique user identifier',
-  `url` text NOT NULL DEFAULT '' COMMENT 'Original URL',
+  `url` text NOT NULL  COMMENT 'Original URL',
   `short_url` CHAR(255) NOT NULL DEFAULT '' COMMENT 'Shortened URL',
   `created_at` timestamp NULL DEFAULT NULL COMMENT 'Entry date creation',
 
